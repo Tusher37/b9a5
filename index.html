@@ -35,6 +35,15 @@
       width: 90%; /* Adjust width as needed */
       margin: 20px 0; /* Adjust margin as needed */
     }
+    .vertical-dashed-line {
+      border-left: 1px dashed #000; /* Adjust color and thickness as needed */
+      height: 100vh; /* Adjust height as needed */
+      margin: 20px 0; /* Adjust margin as needed */
+    }
+    hr {
+      border: 1px solid #ddd;
+      margin: 20px 0;
+    }
   </style>
 </head>
 
@@ -71,7 +80,7 @@
         </nav>
         <!-- Banner -->
         <section>
-            <div class="banna">
+            <div class="banna bg-[url(images/banner.png)] bg-no-repeat bg-center">
                 <div class="font-raleway banner text-center">
                     <h1 class="text-5xl font-bold mb-3 text-white pt-28">End-to-End Travel with </h1><h1 class="text-5xl font-bold mb-5 text-green-500 ">P Paribahan</h1>
                     <p class="mb-5 text-white">Connecting communities with reliable bus services for seamless <br> journeys. Your trusted partner in transportation</p>
@@ -174,11 +183,12 @@
         </section>
         <!-- Seat section -->
         <section>
-          <div class="flex  ml-10 mr-10">
+          <div class="flex  ml-12 mr-10">
+          <!-- <div class="grid grid-cols-3  ml-10 mr-10"> -->
             <div>
               <h1 class="text-xl font-bold">Select Your Seat</h1>
               <div class="dotted-line"></div>
-              <div class="flex justify-between">
+              <div class="flex justify-between pr-20">
                 <div class="flex gap-1">
                   <img src="images/seat-gray.png" alt="">
                   <p>Available</p>
@@ -189,44 +199,85 @@
                 </div>
               </div>
               <div class="dotted-line"></div>
-              <div class="flex justify-end">
+              <div class="flex justify-end pr-24">
                 <button class= "btn bg-gray-300"><img src="images/steering-wheel-26.png" alt=""></button>
               </div>
               <div>
-                <div class="grid grid-cols-3 gap-8 justify-between mt-5">
-                    <div class="flex flex-col">
-                      <p class="text-right text-xl pt-5 pr-5">A</p>
+                <div class="grid grid-cols-2 gap-52 justify-between mt-5 pr-20">
+                    <div class="grid grid-cols-2 gap-5">
+                      <p class="text-center text-xl pt-5">A</p>
+                      <div class="flex">
+                        <button class= "btn btn-lg bg-gray-200 mr-6 w-28">A1</button>
+                        <button class= "btn btn-lg bg-gray-200 w-28">A2</button>
+                      </div>
                     </div>
-                    <div>
-                      <button class= "btn btn-lg bg-gray-200 mr-5">A1</button>
-                      <button class= "btn btn-lg bg-gray-200">A2</button>
-                    </div>
-                    <div class="ml-14">
-                      <button class= "btn btn-lg bg-gray-200 mr-5">A3</button>
-                      <button class= "btn btn-lg bg-gray-200">A4</button>
+                    <div class="">
+                      <button class= "btn btn-lg bg-gray-200 mr-6 w-28">A3</button>
+                      <button class= "btn btn-lg bg-gray-200 w-28">A4</button>
                     </div>
                 </div>
-                <div>
-                    <div class="grid grid-cols-3 gap-8 justify-between mt-5">
-                      <div class="flex flex-col">
-                        <p class="text-right text-xl pt-5 pr-5">B</p>
+                <div class="grid grid-cols-2 gap-52 justify-between mt-5 pr-20">
+                    <div class="grid grid-cols-2 gap-5">
+                      <p class="text-center text-xl pt-5">B</p>
+                      <div class="flex">
+                        <button class= "btn btn-lg bg-gray-200 mr-6 w-28">B1</button>
+                        <button class= "btn btn-lg bg-gray-200 w-28">B2</button>
                       </div>
-                      <div>
-                        <button class= "btn btn-lg bg-gray-200 mr-5">AB</button>
-                        <button class= "btn btn-lg bg-gray-200">B2</button>
-                      </div>
-                      <div class="ml-14">
-                        <button class= "btn btn-lg bg-gray-200 mr-5">B3</button>
-                        <button class= "btn btn-lg bg-gray-200">B4</button>
-                      </div>
+                    </div>
+                    <div class="">
+                      <button class= "btn btn-lg bg-gray-200 mr-6 w-28">B3</button>
+                      <button class= "btn btn-lg bg-gray-200 w-28">B4</button>
                     </div>
                 </div>
               </div>
             </div>
+            
             <!-- Seat cost part -->
-            <div>
-              <h1 class="text-xl font-bold">Select Your Seat</h1>
-              <div class="dotted-line"></div>
+            <div class="flex">
+              <div class="vertical-dashed-line mr-8"></div>
+              <div>
+                <h1 class="text-xl font-bold">Select Your Seat</h1>
+                <div class="dotted-line"></div>
+                <div class="bg-gray-100 p-4 rounded-2xl">
+                  <div class="pb-2">
+                    <table>
+                      <thead>
+                        <tr class="flex  gap-x-32">
+                          <th>Seat 0 </th>
+                          <th>Class</th>
+                          <th>Price</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr class="flex  gap-32">
+                          <td>C2</td>
+                          <td>Economoy</td>
+                          <td>550</td>
+                        </tr>
+                        <tr class="flex  gap-32">
+                          <td>C2</td>
+                          <td>Economoy</td>
+                          <td>550</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <hr>
+                  <div class="flex justify-between text-xl font-semibold pt-2">
+                    <p>Total Price</p>
+                    <p>BDT 1100</p>
+                  </div>
+                  <div class="flex pt-5">
+                    <input type="text" placeholder="Have any copupon?" class="input input-ghost w-full max-w-xs" />
+                    <button class="btn text-white text-xl bg-green-500">Apply</button>
+                  </div>
+                  <div class="flex justify-between text-xl font-semibold pt-5">
+                    <p>Grand Total</p>
+                    <p>BDT 1100</p>
+                  </div>
+                  <button class="btn btn-wide w-full bg-green-500 text-xl text-white mt-5">Next</button>
+                </div>
+              </div>
             </div>
           </div>
         </section>
