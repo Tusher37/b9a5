@@ -1,0 +1,10 @@
+.banna{
+    width: 1300px;
+    margin: 30px;
+}
+.banner{
+    background-image: url(/images/banner.png);
+    height: 550px;
+    width: 1171px;
+    margin: 0 50px;
+}
