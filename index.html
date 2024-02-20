@@ -105,7 +105,7 @@
                 </div>
                 <img src="images/cupon-devider.png" alt="">
                 <div class="font-raleway m-6 pt-10">
-                  <h1 class="text-5xl font-bold pb-2">NEW15</h1>
+                  <h1 id="coupon-code1" class="text-5xl font-bold pb-2">NEW15</h1>
                   <p class="text-xl">Coupon Code</p>
                 </div>
               </div>
@@ -117,7 +117,7 @@
                 </div>
                 <img src="images/cupon-devider.png" alt="">
                 <div class="font-raleway m-6 pt-10">
-                  <h1 class="text-5xl font-bold pb-2">Couple 20</h1>
+                  <h1 id="coupon-code2" class="text-5xl font-bold pb-2">Couple 20</h1>
                   <p class="text-xl">Coupon Code</p>
                 </div>
               </div>
@@ -145,8 +145,9 @@
                         <p class="font-inter text-xl">Coach-009-WEB ! AC_Business</p>
                       </div>
                     </div>
-                    <div class="flex gap-1">
-                      <button class="border-none rounded-xl bg-gray-200 text-green-500 btn btn-xs sm:btn-sm md:btn-md lg:btn-lg"><img src="images/seat-green.png" alt=""> 40 seats left</button>
+                    <div class="flex gap-1 border-none rounded-xl bg-gray-200 w-48">
+                      <img src="images/seat-green.png" alt="">
+                      <div id="seat-availables" class=" text-green-500 text-xl pt-4"> <span id="seat-number">8</span> seats left</div>
                     </div>
                   </div>
                 </div>
@@ -207,26 +208,26 @@
                     <div class="grid grid-cols-2 gap-5">
                       <p class="text-center text-xl pt-5">A</p>
                       <div class="flex">
-                        <button class= "btn btn-lg bg-gray-200 mr-6 w-28">A1</button>
-                        <button class= "btn btn-lg bg-gray-200 w-28">A2</button>
+                        <button id="A1" class= "btn-seat btn btn-lg bg-gray-200 mr-6 w-28">A1</button>
+                        <button id="A2" class= "btn-seat btn btn-lg bg-gray-200 w-28">A2</button>
                       </div>
                     </div>
                     <div class="">
-                      <button class= "btn btn-lg bg-gray-200 mr-6 w-28">A3</button>
-                      <button class= "btn btn-lg bg-gray-200 w-28">A4</button>
+                      <button id="A3" class= "btn-seat btn btn-lg bg-gray-200 mr-6 w-28">A3</button>
+                      <button id="A4" class= "btn-seat btn btn-lg bg-gray-200 w-28">A4</button>
                     </div>
                 </div>
                 <div class="grid grid-cols-2 gap-52 justify-between mt-5 pr-20">
                     <div class="grid grid-cols-2 gap-5">
                       <p class="text-center text-xl pt-5">B</p>
                       <div class="flex">
-                        <button class= "btn btn-lg bg-gray-200 mr-6 w-28">B1</button>
-                        <button class= "btn btn-lg bg-gray-200 w-28">B2</button>
+                        <button id="B1" class= "btn-seat btn btn-lg bg-gray-200 mr-6 w-28">B1</button>
+                        <button id="B2" class= "btn-seat btn btn-lg bg-gray-200 w-28">B2</button>
                       </div>
                     </div>
                     <div class="">
-                      <button class= "btn btn-lg bg-gray-200 mr-6 w-28">B3</button>
-                      <button class= "btn btn-lg bg-gray-200 w-28">B4</button>
+                      <button id="B3" class= "btn-seat btn btn-lg bg-gray-200 mr-6 w-28">B3</button>
+                      <button id="B4" class= "btn-seat btn btn-lg bg-gray-200 w-28">B4</button>
                     </div>
                 </div>
               </div>
@@ -240,42 +241,48 @@
                 <div class="dotted-line"></div>
                 <div class="bg-gray-100 p-4 rounded-2xl">
                   <div class="pb-2">
-                    <table>
-                      <thead>
-                        <tr class="flex  gap-28">
-                          <th>Seat 0 </th>
-                          <th>Class</th>
-                          <th class="pl-7">Price</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr class="flex  gap-32">
-                          <td>C2</td>
-                          <td>Economoy</td>
-                          <td>550</td>
-                        </tr>
-                        <tr class="flex  gap-32">
-                          <td>C2</td>
-                          <td>Economoy</td>
-                          <td>550</td>
-                        </tr>
-                      </tbody>
-                    </table>
+                    <div class="seatInfo flex gap-28">
+                      <div id="selected-seat" class="flex gap-1">Seat <span class="bg-green-500 rounded-2xl">0</span></div>
+                      <div id="seatClass">Class</div>
+                      <div id="seatPrice">Price</div>
+                    </div>
+                    <hr>
+                    <hr>
+                    <div id="seatDetailss"></div>
                   </div>
                   <hr>
                   <div class="flex justify-between text-xl font-semibold pt-2">
                     <p>Total Price</p>
-                    <p>BDT 1100</p>
+                    <p id="total-price">BDT <span>0</span></p>
                   </div>
                   <div class="flex pt-5">
-                    <input type="text" placeholder="Have any copupon?" class="input input-ghost w-full max-w-xs" />
-                    <button class="btn text-white text-xl bg-green-500">Apply</button>
+                    <input id="coupon-code" type="text" placeholder="Have any copupon?" class="input input-ghost w-full max-w-xs" />
+                    <button onclick="updateGrandTotal('apply-btn')" id="apply-btn" class="btn text-white text-xl bg-green-500">Apply</button>
                   </div>
                   <div class="flex justify-between text-xl font-semibold pt-5">
                     <p>Grand Total</p>
-                    <p>BDT 1100</p>
+                    <p id="grand-total">BDT <span>0</span></p>
                   </div>
-                  <button class="btn btn-wide w-full bg-green-500 text-xl text-white mt-5">Next</button>
+                  <!-- Open the modal using ID.showModal() method -->
+                  <button class="btn btn-wide w-full bg-green-500 text-xl text-white mt-5" onclick="my_modal_1.showModal()">Next</button>
+                  <dialog id="my_modal_1" class="modal">
+                    <div class="modal-box">
+                      <div class="flex justify-center">
+                        <img src="images/success.png" alt="">
+                      </div>
+                      <h3 class="bg-white text-xl font-medium text-center rounded-2xl text-green-500 mt-5 mb-5">SUCCESS</h3>
+                      <h3 class="font-bold text-lg text-center">Thank you for Booking Our Bus Seats. <br> 
+                        We are working hard to find the best service and deals for you. 
+                      </h3>
+                      <p class="py-4 text-center">Shortly you will find a confirmation in your email.</p>
+                      <div class="modal-action">
+                        <form method="dialog">
+                          <!-- if there is a button in form, it will close the modal -->
+                          <button class="btn mr-40 bg-green-500 text-xl text-center rounded-2xl text-white mt-5">Continue</button>
+                        </form>
+                      </div>
+                    </div>
+                  </dialog>
                 </div>
               </div>
             </div>
@@ -285,5 +292,6 @@
     <footer>
 
     </footer>
+    <script src="script/script.js"></script>
 </body>
 </html>
